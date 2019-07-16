@@ -4,7 +4,6 @@ import CardColumns from './CardColumns';
 import EmptyCart from './EmptyCart';
 import { ProductConsumer } from '../../context';
 import CardItems from './CardItems';
-import { ButtonContainer } from '../Button';
 import ClearCart from './ClearCart';
 
 const columnsTitles = [
@@ -30,7 +29,7 @@ export default class Cart extends Component {
                   {cart.map(item => {
                     return <CardItems key={item.id} cart={item} />;
                   })}
-                      <ClearCart value={value}/>
+                  <ClearCart value={value} history={this.props.history}/>
                 </>
               );
             } else {
